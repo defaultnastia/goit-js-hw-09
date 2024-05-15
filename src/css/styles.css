@@ -1,25 +1,111 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-@import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
-
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
   line-height: 24px;
   font-weight: 400;
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  color: black;
+  background-color: #ece5e5;
 }
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+  transition: color ease 0.3s;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* #region INDEX */
+.welcome-box {
+  display: flex;
+  flex-direction: column;
+  color: #ece5e5;
+  background-color: black;
+  width: inherit;
+  min-width: 560px;
+  height: inherit;
+  background-image: url('../img/morph-background.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.welcome-header {
+  text-align: center;
+  padding: 15px;
+}
+
+.menu {
+  width: inherit;
+  width: 400px;
+  min-height: 700px;
+  justify-content: space-between;
+  font-weight: 700;
+  display: flex;
+  margin: auto;
+  padding-top: 260px;
+}
+
+.gallery-link:hover {
+  color: red;
+}
+
+.form-link:hover {
+  color: blue;
+}
+
+/* #endregion INDEX */
+
+/* #region GALLERY */
+.gallery {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  margin: 24px auto 0px;
+  max-width: 1200px;
+}
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.gallery-image:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+/* #endregion GALLERY */
+
+/* #region FORM */
+body.form-body {
+  background-color: wheat;
+}
+/* #endregion FORM */
