@@ -6,6 +6,8 @@ const STORAGE_KEY = 'feedback-form-state';
 
 const formEl = document.querySelector('.feedback-form');
 
+renderPage();
+
 formEl.addEventListener('submit', event => {
   event.preventDefault();
   if (validateForm()) {
@@ -27,14 +29,6 @@ formEl.addEventListener('input', () => {
   formData.message = enteredData.get('message').trim();
   writeToLS(STORAGE_KEY, formData);
 });
-
-function renderPage() {
-  const preEnteredData = readFromLS(STORAGE_KEY) || {};
-  formEl.elements.email.value = preEnteredData.email || '';
-  formEl.elements.message.value = preEnteredData.message || '';
-}
-
-renderPage();
 
 //========
 
@@ -65,4 +59,10 @@ function readFromLS(key) {
   } catch (error) {
     console.log(error);
   }
+}
+
+function renderPage() {
+  const preEnteredData = readFromLS(STORAGE_KEY) || {};
+  formEl.elements.email.value = preEnteredData.email || '';
+  formEl.elements.message.value = preEnteredData.message || '';
 }
