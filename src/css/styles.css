@@ -5,12 +5,14 @@
   font-weight: 400;
 
   color: black;
-  background-color: #ece5e5;
+  background-color: #fff;
 }
 
 html {
   box-sizing: border-box;
+  min-height: 100%;
 }
+
 *,
 *:before,
 *:after {
@@ -19,6 +21,7 @@ html {
 
 body {
   margin: 0;
+  min-height: 100%;
 }
 
 a,
@@ -31,13 +34,25 @@ a:focus {
   transition: color ease 0.3s;
 }
 
-a:hover {
+a:hover,
+button:hover {
   cursor: pointer;
 }
 
 ul {
   list-style: none;
   padding: 0;
+}
+
+.back-link {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-left: 24px;
+}
+
+.back-link a::before {
+  content: '←  ';
+  font-size: 20px;
 }
 
 /* #region INDEX */
@@ -48,7 +63,7 @@ ul {
   background-color: black;
   width: inherit;
   min-width: 560px;
-  height: inherit;
+  min-height: 100%;
   background-image: url('../img/morph-background.jpeg');
   background-repeat: no-repeat;
   background-position: center;
@@ -105,7 +120,61 @@ ul {
 /* #endregion GALLERY */
 
 /* #region FORM */
-body.form-body {
-  background-color: wheat;
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 24px;
+  margin: auto;
+  font-size: 16px;
 }
+
+.feedback-form label {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  display: inline-flex;
+  padding: 8px;
+  min-width: 369px;
+  min-height: 40px;
+  border: 1px solid rgba(128, 128, 128, 1);
+  border-radius: 4px;
+  align-items: center;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.feedback-form input:hover,
+.feedback-form textarea:hover,
+.feedback-form input:focus,
+.feedback-form textarea:focus,
+.feedback-form input:active,
+.feedback-form textarea:active {
+  border-color: black;
+  outline: none;
+}
+
+button[type='submit'] {
+  padding: 8px 16px;
+  color: #fff;
+  background-color: rgba(78, 117, 255, 1);
+  border: none;
+  border-radius: 8px;
+  width: fit-content;
+  margin-top: 8px;
+  font-size: 16px;
+  transition: background-color ease 0.3s;
+}
+
+button[type='submit']:hover {
+  background-color: rgba(108, 140, 255, 1);
+}
+
 /* #endregion FORM */
